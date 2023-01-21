@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML - Hauptseite</title>
+<link rel="stylesheet" href="index.css">
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+display: none;
+position: absolute;
+z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+</style>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Beichten</h1>
+        <h2> Sag uns deine Sünde!</h2>
+    </div>
+    <div class="navigation">
+        <div class="dropdown">
+            <a href ="page1.html">Zu den Produkten</a>
+            <div class="dropdown-content">
+                <a href="#">Produkt 1</a>
+                <a href="#">Produkt 2</a>
+                <a href="#">Produkt 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href ="page2.html">Werde Partner</a>
+            <div class="dropdown-content">
+                <a href="#">Partner 1</a>
+                <a href="#">Partner 2</a>
+                <a href="#">Partner 3</a>
+            </div>
+        </div>
+    </div>
+   <div class="content">
+    <div class="left-content">
+        <p>Dsa ist der Kontent des linken bereich</p>
+    </div>
+    <div class="main-content">
+        <h1> Das ist eine Überschrift1</h1>
+        <p>Lorem ipsum dolor si
+    </div>
+    <div class="rigth-content"></div>
+        <p>Das ist der Rechte Kontent</p>
+   </div>
+
+</body>
+</html>

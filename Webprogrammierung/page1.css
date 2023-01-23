@@ -2,8 +2,20 @@ body {
     margin: 0%;
   }
 
-  .header {
-    text-align:  center;
+  .header{
+    text-align: justify;
+    display: flex;
+  }
+  
+  .main-header {
+    width: 80%;
+    text-align:  center;  
+  }
+
+  div.left-header,
+  div.right-header{
+    width: calc(10% - 100px);
+    padding: 50px;
   }
 
   .navigation{
@@ -55,7 +67,13 @@ body {
 
 
 .product {
-    border: 1px solid red;
+    
+    display: inline-block;
     padding: 10px;
     margin: 20px;
+}
+
+.Home img {
+    max-width: 50px;
+    max-height: 50px;
 }

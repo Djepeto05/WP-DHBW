@@ -1,0 +1,85 @@
+body {
+    margin: 0%;
+  }
+
+  .header {
+    text-align:  center;
+  }
+
+  .navigation{
+    background-color:  #262626;
+    position: sticky;
+    top: 0px;
+    display: flex;
+  }
+
+  .dropbtn{
+    color: white;
+    margin: 15px;
+  }
+
+  .drop_1:hover .dropdown-content {
+    display: block;
+  }
+
+  .drop_2:hover .dropdown-content {
+    display: block;
+  }
+
+  .drop_1:hover{
+    background-color: gray;
+  }
+
+  .drop_2:hover{
+    background-color: gray;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    
+  }
+
+  
+
+  div.dropdown-content>a{
+    color:  white;
+    text-decoration: none;
+    margin: 15px;
+    display: block;
+  }
+
+  div.dropdown-content>a:hover{
+    text-decoration: underline;
+  }
+
+  div.content{
+    text-align: justify;
+    display: flex;
+  }
+
+  div.left-content,
+  div.right-content{
+    width: calc(10% - 100px);
+    padding: 50px;
+  }
+
+  div.main-content{
+    width: 80%;
+  }
+
+  .Kontaktfeld{
+    background-color: gray;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .Kontakt-Daten{
+    margin-left: 15px;
+  }
+
+
+
+
+

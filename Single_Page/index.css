@@ -59,13 +59,13 @@ body {
     display: flex;
   }
 
-  div.left-content,
-  div.right-content{
+  div#left-content,
+  div#right-content{
     width: calc(10% - 100px);
     padding: 50px;
   }
 
-  div.main-content{
+  div#main-content{
     width: 80%;
   }
 

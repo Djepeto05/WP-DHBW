@@ -1,6 +1,6 @@
-class Details extends Page {
+class Pants extends Page {
     constructor() {
         // call parent constructor to load html code
-        super('details');
+        super('pants');
     }
 }

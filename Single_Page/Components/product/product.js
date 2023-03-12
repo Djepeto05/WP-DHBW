@@ -11,6 +11,7 @@ class Product {
     }
 
     render(parentSelector) {
+        
         const parent = $(parentSelector);
         const newProduct = $('<div></div>');
         newProduct.load('.\\components\\product\\product.html', () => {
@@ -18,6 +19,8 @@ class Product {
             newProduct.find('.product-price').text(`Preis: ${this.price} €`);
             newProduct.find('.product-image').attr('src',`${this.image}.jpeg`)
             parent.append(newProduct);
+
+
         });
     }
 }

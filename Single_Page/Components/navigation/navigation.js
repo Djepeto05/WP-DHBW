@@ -1,12 +1,12 @@
 class Navigation {
     onClickCallback;
     parentSelector;
-    constructor(callback) {
+    pages;
+    constructor(pages, callback) {
         this.onClickCallback = callback;
+        this.pages = pages;
     }
 
-    
-    
     render(parentSelector) {
         console.log(parentSelector);
         this.parentSelector = parentSelector;
@@ -14,9 +14,14 @@ class Navigation {
         // add reference to style sheet
         $('head').append('<link rel="stylesheet" href="components/navigation/navigation.css">');
 
+        // load html file async
         $(parentSelector).load('.\\components\\navigation\\navigation.html', () => {
 
-            
+            // register dynamic links to pages
+            const pageKeys = Object.keys(this.pages);
+            pageKeys.forEach((pageKey) => {
+                $(`${parentSelector} .navigation`).append(`<a id="${pageKey}">${this.pages[pageKey].label}</a>`)
+            });
 
             // register for click events
             $(`${parentSelector} a`).on('click', (e) => {
@@ -35,6 +40,4 @@ class Navigation {
         // inform parent about change
         this.onClickCallback(id);
     }
-
-    
 }

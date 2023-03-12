@@ -5,14 +5,13 @@ class Page {
     pageName;
     constructor(pageName, hasCssFile) {
         this.pageName = pageName;
-        //Ohne If funktioniert das css file
         
             $('head').append(`<link rel="stylesheet" href=".\\pages\\${this.pageName}\\${pageName}.css" />`)
         
     }
 
-    render(parentSelector) {
+    render(parentSelector, callback) {
         // care: async function
-        $(parentSelector).load(`.\\pages\\${this.pageName}\\${this.pageName}.html`);
+        $(parentSelector).load(`.\\pages\\${this.pageName}\\${this.pageName}.html`, callback);
     }
 }

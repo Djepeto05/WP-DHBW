@@ -1,7 +1,16 @@
-class Product extends Page {
-    constructor() {
-        // call parent constructor to load html code
-        super('product', true);
-        this.productItems = getAllProducts()
+class Products extends Page {
+    constructor(productCategory) {
+        super('products', true);
+        this.productItems = getAllProducts(productCategory);
+    }
+
+    render(parentSelector) {
+        super.render(parentSelector, () => {
+            this.productItems.forEach((productItem) =>
+            {
+                const product = new Product(productItem.title, productItem.price, productItem.image, productItem.description);
+                product.render('.products');
+            })
+        })
     }
 }

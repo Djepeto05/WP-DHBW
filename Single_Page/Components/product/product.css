@@ -1,0 +1,16 @@
+
+/*.product {
+    padding: 1px;
+    margin: 1px;
+
+}
+
+.product img {
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}*/

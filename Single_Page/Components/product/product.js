@@ -17,7 +17,8 @@ class Product {
         newProduct.load('.\\components\\product\\product.html', () => {
             newProduct.find('.product-title').text(this.title);
             newProduct.find('.product-price').text(`Preis: ${this.price} €`);
-            newProduct.find('.product-image').attr('src',`${this.image}.jpeg`)
+            newProduct.find('.product-image').attr('src',`${this.image}.jpeg`);
+            newProduct.find('.product-description').text(this.description)
             parent.append(newProduct);
 
 

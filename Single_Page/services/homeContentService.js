@@ -1,63 +1,15 @@
-const exampleContent = [
-    {
-        title: 'Überschrift 1',
-        content: 'Lorem Ipsum',
-    },
-    {
-        title: 'Überschrift 2',
-        content: 'Lorem Ipsum',
-    },
-    {
-        title: 'Überschrift 3',
-        content: 'Lorem Ipsum',
+
+async function getAllProducts(categoryFilter) {
+    
+    const httpResult = await fetch('http://localhost/2023/index.php');
+    if(httpResult.ok) {
+        const result = await httpResult.json();
+        return result.filter(product => product.category === categoryFilter);
     }
-];
-
-const exampleProducts = [
-    {
-        id: 1,
-        title: "Test1",
-        price: 20,
-        category: "Tops",
-        image: 'MCM Top 1',
-
-    },
-    {
-        id: 2,
-        title: "Test2",
-        price: 20,
-        category: "Tops",
-        image: 'MCM Top 1',
-    },
-    {
-        id: 3,
-        title: "Test3",
-        price: 20,
-        category: "Pants",
-        image: 'MCM Top 1',
-    },
-    {
-        id: 4,
-        title: "Test4",
-        price: 20,
-        category: "Pants",
-        image: 'MCM Top 2',
-    },
-    {
-        id: 5,
-        title: "Test5",
-        price: 20,
-        category: "Tops",
-        image: 'MCM Top 2',
-    },
-   
-];
-
-
-function getAllProducts(categoryFilter) {
-    return exampleProducts.filter(exampleProducts => exampleProducts.category === categoryFilter);
+    
+    return exampleProducts
 }
 
-function getAllContent() {
-    return exampleContent;
-}
+
+
+  

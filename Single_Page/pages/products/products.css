@@ -1,8 +1,34 @@
+/*
 .products{
-    margin: 10px;
+    
+    display: flex;
+    
 }
 
-.products :hover {
-    transform: scale(1.1);
+.products img{
     transition: all 0.3s ease;
+    margin: 15px;
+    
+}
+
+.products:hover img {
+    transform: scale(1.1);
+    
   }
+.products img{
+    display: inline-block;
+}
+*/
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .products img{
+    
+    margin: 15px;
+    
+}
+  

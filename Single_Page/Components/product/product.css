@@ -11,6 +11,14 @@
     height: 100%;
 }
 
+.product img {
+    
+    max-width: 400px;
+    max-height: 400px;
+}
+
 .product:hover img {
     transform: scale(1.1);
+    
 }*/
+

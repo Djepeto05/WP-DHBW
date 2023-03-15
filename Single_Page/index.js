@@ -30,7 +30,7 @@ $(function () {
 
 
     const registerComponents = () => {
-        const components = ['navigation', 'product'];
+        const components = ['navigation', 'product', 'footer'];
         components.forEach(component => {
             $('head').append(`<script src="components/${component}/${component}.js" />`);
         });

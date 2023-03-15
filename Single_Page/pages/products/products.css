@@ -28,7 +28,10 @@
 
   .products img{
     
-    margin: 15px;
+    margin-right:30px;
+    margin-top: 30px;
+    max-width: 200px;
+    max-height: 200px;
     
 }
   

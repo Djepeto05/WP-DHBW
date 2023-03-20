@@ -64,6 +64,9 @@ class Warenkorb extends Component {
 
     addItem(product) {
        console.log(product)
+       const cartProduct = $('<li></li>');
+       
+
     }
 
     // hide-Funktion wird aufgerufen, wenn warenkorb geschlossen werden soll (von extern oder dem warenkorb selbst)
@@ -77,3 +80,20 @@ class Warenkorb extends Component {
         });
     }
 }
+
+/*onst parent = $(parentSelector);
+        const newProduct = $('<div></div>');
+        newProduct.load('.\\components\\product\\product.html', () => {
+            newProduct.find('.product-title').text(this.title);
+            newProduct.find('.product-price').text(`Preis: ${this.price} €`);
+            newProduct.find('.product-image').attr('src', `${this.image}.jpeg`);
+            newProduct.find('.product-description').text(this.description);
+
+            parent.append(newProduct);*/
+
+            /*addItem(product) {
+                console.log(product)
+                const cartProduct = $('<li></li>');
+                
+         
+             }*/

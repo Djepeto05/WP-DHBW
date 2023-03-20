@@ -3,11 +3,13 @@ class Product {
     price;
     image;
     description;
-    constructor(title, price, image, description) {
+    addToCart;
+    constructor(title, price, image, description, addToCart) {
         this.title = title;
         this.price = price;
         this.description = description;
         this.image = image;
+        this.addToCart = addToCart;
     }
 
     render(parentSelector) {
@@ -32,7 +34,7 @@ class Product {
                 // Altes Element ausblenden und das neue Element einfügen
                 parent.hide();
                 parent.after(selectedProduct);
-                
+
                 // Zurück-Button hinzufügen
                 selectedProduct.append($('<button></button>').text('Zurück').click(() => {
                     selectedProduct.remove();
@@ -40,7 +42,8 @@ class Product {
                 }));
 
                 selectedProduct.append($('<button></button>').text('Zum Warenkorb hinzufügen').click(() => {
-                    console.log('Produkt wurde in den Warenkorb gelegt!');
+                    this.addToCart(this);
+                    
                 }));
 
                 
@@ -52,6 +55,14 @@ class Product {
         });
     }
 }
+/*
+// Array für den Warenkorb
+const cart = [];
 
+// Funktion zum Hinzufügen eines Produkts zum Warenkorb
+function addToCart(product) {
+    cart.push(product);
+    console.log(`Das Produkt "${product.title}" wurde zum Warenkorb hinzugefügt.`);
 
-
+}
+*/

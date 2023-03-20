@@ -19,3 +19,13 @@ div.navigation>a.active {
   background-color: #f2f2f2f2;
   color: #333;
 }
+
+.w_korb{
+  color: white;
+}
+
+.w_korb:hover{
+  background-color: white;
+  color: black;
+}
+

@@ -29,6 +29,14 @@ class Navigation {
                 console.log(this.onClickCallback);
                 this.navigateTo(e.target.id);
             });
+
+            $('.w_korb').on('click', () => {
+                console.log("Test123");
+                const warenkorb = new Warenkorb();
+                warenkorb.render('#overlay-content')
+                warenkorb.show('Feedback', 'Vielen Dank für Ihr Feedback!');
+            });
+            
         });
     }
 

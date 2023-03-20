@@ -1,0 +1,43 @@
+#warenkorb {
+    /* Position ist fixiert, um immer angezeigt zu werden */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.66);
+
+    /* Wichtig, um im Vordergrund über allen Elementen gerendert zu werden */
+    z-index: 100;
+
+    /* Inhalt mittig anordnen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Transition sorgt für Erscheinen und Verschwinden des warenkorbs (zusammen mit "Visible" Klasse) */
+    transition: transform 0.5s ease-in-out;
+
+    /* Start mit der Skalierung mit Faktor 0 (d.h. Breite & Höhe = 0) */
+    transform: scale(0);
+}
+
+#warenkorb.visible {
+    /* Skalierung auf Standard (Faktor 1, d.h. Breite & Höhe = 100%), wenn Klasse "visible" */
+    transform: scale(1);
+}
+
+.warenkorb-container {
+    /* Hintergrundfarbe, Abstände und Border zum Overlay */
+    background-color: white;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    /* Feste Breite und Höhe, könnte ggf. automatisch abhängig vom verfügbaren Platz erweitert werden */
+    width: 70%;
+    height: 70%;
+}
+
+.warenkorb-title {
+    /* Border zwischen Titel und Inhalt */
+    border-bottom: 2px solid lightgray;
+}

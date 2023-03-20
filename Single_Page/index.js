@@ -1,5 +1,4 @@
 $(function () {
-
     const pages = {
         home: {
             getInstance: (c) => new Home(c),
@@ -30,7 +29,7 @@ $(function () {
 
 
     const registerComponents = () => {
-        const components = ['navigation', 'product', 'footer'];
+        const components = ['navigation', 'product', 'warenkorb'];
         components.forEach(component => {
             $('head').append(`<script src="components/${component}/${component}.js" />`);
         });
@@ -44,4 +43,10 @@ $(function () {
     const navigation = new Navigation(pages, navigateTo);
     navigation.render('#navigation');
 
+
+    console.log($('.w_korb'));
+    
+
 });
+
+

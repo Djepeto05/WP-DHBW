@@ -7,22 +7,7 @@ class Home extends Page {
     render(parentSelector) {
         // Ziel: Alle Inhalte werden von der homeContentService.js Datei geladen und dynamisch
         // in den parentSelector geladen
-        /*
-        <div>
-            <div>
-                <h1>Überschrift 1</h1>
-                <p>Lorem Ipsum</p>
-            </div>
-            <div>
-                <h1>Überschrift 2</h1>
-                <p>Lorem Ipsum</p>
-            </div>
-            <div>
-                <h1>Überschrift 3</h1>
-                <p>Lorem Ipsum</p>
-            </div>
-        </div>
-        */
+        
         const contentElements = getAllContent(); 
 
         // leren des parentSelectors, da "load" Funktion nicht mehr aufgerufen wird

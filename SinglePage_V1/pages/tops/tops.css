@@ -1,0 +1,23 @@
+.tops {
+    display: inline-block;
+    padding: 10px;
+    margin: 20px;
+    
+}
+
+.tops img {
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tops:hover img {
+    transform: scale(1.1);
+  }
+
+  a {
+    cursor: pointer;
+  }
+  
+
+  

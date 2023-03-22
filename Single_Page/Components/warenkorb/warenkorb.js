@@ -4,6 +4,9 @@ class Warenkorb extends Component {
     constructor() {
         super('warenkorb', true);
         this.cartItemsList = $('<ul id="cart-items"></ul>');
+
+        this._product = [];
+
     }
 
     render(parentSelector) {
@@ -39,6 +42,11 @@ class Warenkorb extends Component {
 
                 // Wenn "Confirm" geklickt wird, dann warenkorb schließen und Information an aufrufendes Element übergeben (true = Confirmation)
                 warenkorb.find('.warenkorb-confirm').on('click', () => {
+                    
+                    for(let i = 0; i < this._product.length; i++) {
+                        postMethode(i, this._product[i].title, this._product[i].price);
+                    }
+                    
                     this.hide();
                     onFinishedCallback(true);
                 });
@@ -79,7 +87,7 @@ class Warenkorb extends Component {
         const cartProduct = $('<li></li>')
         const removeButton = $('<button class="cart-remove">Remove</button>');
         cartProduct.text(product.title + " - " + product.price);
-
+        this._product.push(product);
     
         // Add click event listener for the remove button
         removeButton.on('click', () => {
@@ -97,7 +105,6 @@ class Warenkorb extends Component {
         const warenkorb = $('#warenkorb');
         // Entfernen der Klasse "visible" löst Transition zum Schließen aus
         warenkorb.removeClass('visible');
-    }
+    }
 }
-
 

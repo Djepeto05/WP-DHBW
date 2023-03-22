@@ -3,6 +3,7 @@ class Warenkorb extends Component {
     parentSelector;
     constructor() {
         super('warenkorb', true);
+        this.cartItemsList = $('<ul id="cart-items"></ul>');
     }
 
     render(parentSelector) {
@@ -10,6 +11,8 @@ class Warenkorb extends Component {
         // Es wird nichts bei render ins DOM hinzugefügt
         this.parentSelector = parentSelector;
     }
+
+    
 
     // Show Funktion wird von anderen Komponenten/Seiten aufgerufen, um das warenkorb anzuzeigen
     show(title, content, onFinishedCallback) {
@@ -49,51 +52,52 @@ class Warenkorb extends Component {
         } else {
             // Überschreiben der Texte, wenn ein warenkorb schon existiert
             this.setTexts(title, content, warenkorb);
+            // Make the cart visible
+            warenkorb.addClass('visible');
         }
     }
 
-    setTexts(title, content, warenkorb) {
-        // Die "visible" Klasse muss in einem timeout hinzugefügt werden, weil die Transition sonst nicht 
-        // ausgeführt wird
-        setTimeout(() => warenkorb.addClass('visible'), 1);
+      
 
-        // Setzen des Titels und des Inhaltes
+      setTexts(title, content, warenkorb) {
+        // The "visible" class must be added in a timeout because the transition will not
+        // be executed otherwise
+        setTimeout(() => warenkorb.addClass('visible'), 1);
+      
+        // Set the title and content
         warenkorb.find('.warenkorb-title').text(title);
         warenkorb.find('.warenkorb-content').text(content);
+      
+        // Append the cart items list
+        warenkorb.find('.warenkorb-content').append(this.cartItemsList);
+      }
+      
+      
+
+      addItem(product) {
+        console.log(product);
+        const cartProduct = $('<li></li>')
+        const removeButton = $('<button class="cart-remove">Remove</button>');
+        cartProduct.text(product.title + " - " + product.price);
+
+    
+        // Add click event listener for the remove button
+        removeButton.on('click', () => {
+            cartProduct.remove();
+        });
+    
+        cartProduct.append(removeButton);
+        this.cartItemsList.append(cartProduct);
     }
+      
+      
 
-    addItem(product) {
-       console.log(product)
-       const cartProduct = $('<li></li>');
-       
-
-    }
-
-    // hide-Funktion wird aufgerufen, wenn warenkorb geschlossen werden soll (von extern oder dem warenkorb selbst)
+    // hide-Funktion wird aufgerufen, wenn warenkorb geschlossen werden soll
     hide() {
         const warenkorb = $('#warenkorb');
         // Entfernen der Klasse "visible" löst Transition zum Schließen aus
         warenkorb.removeClass('visible');
-        warenkorb.on('transitionend', () => {
-            // erst nach Transition vom DOM entfernen, damit diese noch erfolgreich ausgeführt wird
-            warenkorb.remove();
-        });
     }
 }
 
-/*onst parent = $(parentSelector);
-        const newProduct = $('<div></div>');
-        newProduct.load('.\\components\\product\\product.html', () => {
-            newProduct.find('.product-title').text(this.title);
-            newProduct.find('.product-price').text(`Preis: ${this.price} €`);
-            newProduct.find('.product-image').attr('src', `${this.image}.jpeg`);
-            newProduct.find('.product-description').text(this.description);
 
-            parent.append(newProduct);*/
-
-            /*addItem(product) {
-                console.log(product)
-                const cartProduct = $('<li></li>');
-                
-         
-             }*/

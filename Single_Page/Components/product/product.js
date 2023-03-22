@@ -44,6 +44,15 @@ class Product {
                 selectedProduct.append($('<button></button>').text('Zum Warenkorb hinzufügen').click(() => {
                     this.addToCart(this);
                     
+                    // Animation hinzufügen
+                    const addedText = $('<div></div>').text('hinzugefügt');
+                    addedText.addClass('added-text');
+                    parent.after(addedText);
+                    addedText.fadeIn('slow', () => {
+                        addedText.delay(5000).fadeOut('slow', () => {
+                            addedText.remove();
+                        });
+                    });
                 }));
 
                 
@@ -55,14 +64,3 @@ class Product {
         });
     }
 }
-/*
-// Array für den Warenkorb
-const cart = [];
-
-// Funktion zum Hinzufügen eines Produkts zum Warenkorb
-function addToCart(product) {
-    cart.push(product);
-    console.log(`Das Produkt "${product.title}" wurde zum Warenkorb hinzugefügt.`);
-
-}
-*/
